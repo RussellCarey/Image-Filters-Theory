@@ -23,7 +23,7 @@ function setup() {
 }
 
 function draw() {
-    // imgIn.filter(GRAY);
+    imgIn.filter(GRAY);
     image(imgIn, 0, 0);
     image(edgeDetectionFilter(imgIn), imgIn.width + 20, 1);
     noLoop();
@@ -49,7 +49,6 @@ function edgeDetectionFilter(img) {
             cY = map(abs(cY[0]), 0, 1020, 0, 255);
 
             const combine = cX + cY;
-            console.log(combine);
 
             imgOut.pixels[index + 0] = combine;
             imgOut.pixels[index + 1] = combine;
